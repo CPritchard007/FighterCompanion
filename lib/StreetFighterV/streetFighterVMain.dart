@@ -1,44 +1,50 @@
-import 'package:fighter_companion/StreetFighterV/streetFighterVCharacterInfo.dart';
 import 'package:flutter/material.dart';
 
-/**
- * 
- *      Currently Disabled, the page will skip to the character
- *  
- * 
- * Curtis Pritchard
- */
-class StreetFighterVCharacters extends StatelessWidget {
-  final List<dynamic> data;
+class StreetFighterArguments {
+  final Map<String, dynamic> data;
 
-  StreetFighterVCharacters(this.data);
+  StreetFighterArguments(this.data);
+}
+
+class StreetFighterVCompanion extends StatelessWidget {
+  final Map<String, dynamic> data;
+  StreetFighterVCompanion(this.data);
 
   @override
   Widget build(BuildContext context) {
+    final sectionTitles = data.keys.toList();
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("Characters"),
+        title: Text("Street Fighter V"),
       ),
       body: SafeArea(
         child: GridView.count(
-          crossAxisCount: (MediaQuery.of(context).size.width / 120).floor(),
+          crossAxisCount: (MediaQuery.of(context).size.width / 200).floor(),
           children: List.generate(data.length, (index) {
             return Container(
-              margin: EdgeInsets.all(5),
+              margin: EdgeInsets.all(10),
               child: RaisedButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(
-                    context,
-                    "/streetFighterV/Characters/Info",
-                    arguments: RouteCharacterIndex(index),
-                  );
+                  switch (index) {
+                    case 0:
+                      Navigator.pushNamed(
+                          context, "/streetFighterV/Characters");
+                      break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    default:
+                      break;
+                  }
                 },
                 child: Center(
                   child: Text(
-                    data[index]["Name"],
+                    sectionTitles[index],
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
