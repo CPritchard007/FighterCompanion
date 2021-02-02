@@ -62,7 +62,11 @@ class MyApp extends StatelessWidget {
                   StreetFighterVCompanion(snapshot.data["Street Fighter V"]),
               "/streetFighterV/Characters": (context) =>
                   StreetFighterVCharacters(
-                      snapshot.data["Street Fighter V"]["Characters"])
+                      snapshot.data["Street Fighter V"]["Characters"]),
+              "/dragonballFighterZ": (context) =>
+                  snapshot.data["Dragonball Fighter Z"],
+              "/dragonballFighterZ/Characters": (context) =>
+                  snapshot.data["Dragonball Fighter Z"]["Characters"]
             },
             theme: ThemeData(
               primarySwatch: headerColor,
@@ -88,12 +92,10 @@ class GamesCollection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //########################################
-    final MaterialColor backgroundColor = Colors.purple;
 
     //########################################
     final gameTitles = data.keys.toList();
     return Scaffold(
-      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: Text("Select A Game"),
       ),
@@ -102,11 +104,7 @@ class GamesCollection extends StatelessWidget {
           crossAxisCount: (MediaQuery.of(context).size.width / 180).floor(),
           children: List.generate(data.length, (index) {
             return Container(
-              margin: EdgeInsets.all(10),
               child: RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
                 onPressed: () {
                   switch (index) {
                     case 0:
@@ -114,6 +112,9 @@ class GamesCollection extends StatelessWidget {
                           context, "/streetFighterV/Characters");
                       break;
                     case 1:
+                      Navigator.pushNamed(
+                          context, "/dragonballFighterZ/Characters");
+                      break;
                     case 2:
                     case 3:
                     default:

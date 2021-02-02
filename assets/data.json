@@ -201,5 +201,152 @@
             }
         ]
     },
-    "Dragonball FighterZ": {}
+    "Dragonball Fighter Z": {
+        "Characters": [
+            {
+                "Name": "Goku",
+                "Moves": []
+            },
+            {
+                "Name": "Vegeta",
+                "Moves": []
+            },
+            {
+                "Name": "Frieza",
+                "Moves": []
+            },
+            {
+                "Name": "Gohan",
+                "Moves": []
+            },
+            {
+                "Name": "Goku Black",
+                "Moves": []
+            },
+            {
+                "Name": "Majin Buu",
+                "Moves": []
+            },
+            {
+                "Name": "Broly",
+                "Moves": []
+            },
+            {
+                "Name": "Android 21",
+                "Moves": []
+            },
+            {
+                "Name": "Beerus",
+                "Moves": []
+            },
+            {
+                "Name": "Gogeta",
+                "Moves": []
+            },
+            {
+                "Name": "Trunks",
+                "Moves": []
+            },
+            {
+                "Name": "Yamcha",
+                "Moves": []
+            },
+            {
+                "Name": "Piccolo",
+                "Moves": []
+            },
+            {
+                "Name": "Krillin",
+                "Moves": []
+            },
+            {
+                "Name": "Android 18",
+                "Moves": []
+            },
+            {
+                "Name": "Master Roshi",
+                "Moves": []
+            },
+            {
+                "Name": "Tien Shinhan",
+                "Moves": []
+            },
+            {
+                "Name": "Bardock",
+                "Moves": []
+            },
+            {
+                "Name": "Gotenks",
+                "Moves": []
+            },
+            {
+                "Name": "Android 16",
+                "Moves": []
+            },
+            {
+                "Name": "Android 17",
+                "Moves": []
+            },
+            {
+                "Name": "Nappa",
+                "Moves": []
+            },
+            {
+                "Name": "Vegetto",
+                "Moves": []
+            },
+            {
+                "Name": "Jiren",
+                "Moves": []
+            },
+            {
+                "Name": "Baby",
+                "Moves": []
+            },
+            {
+                "Name": "Videl",
+                "Moves": []
+            },
+            {
+                "Name": "Kefla",
+                "Moves": []
+            },
+            {
+                "Name": "Cell",
+                "Moves": []
+            },
+            {
+                "Name": "Captain Ginyu",
+                "Moves": []
+            },
+            {
+                "Name": "Janemba",
+                "Moves": []
+            },
+            {
+                "Name": "Zamasu",
+                "Moves": []
+            },
+            {
+                "Name": "Vegito",
+                "Moves": []
+            },
+            {
+                "Name": "Gogeta",
+                "Moves": []
+            },
+            {
+                "Name": "Goku GT",
+                "Moves": []
+            },
+            {
+                "Name": "Cooler",
+                "Moves": []
+            },
+            {
+                "Name": "Super Broly",
+                "Moves": []
+            }
+        ]
+    }
 }
