@@ -59,4 +59,9 @@ class StreetFighterVCompanion extends StatelessWidget {
       ),
     );
   }
+
+  Future getMoveData() {
+    const URL =
+        "https://raw.githubusercontent.com/D4RKONION/fatsfvframedatajson/master/sfv.json";
+  }
 }

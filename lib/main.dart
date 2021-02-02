@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:fighter_companion/StreetFighterV/streetFighterVCharacterFrames.dart';
+import 'package:fighter_companion/StreetFighterV/streetFighterVCharacterMoves.dart';
 import 'package:fighter_companion/StreetFighterV/streetFighterVCharacterInfo.dart';
 import 'package:fighter_companion/StreetFighterV/streetFighterVCharacters.dart';
 import 'package:fighter_companion/StreetFighterV/streetFighterVMain.dart';
@@ -12,15 +12,25 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-
+  final MaterialColor headerColor = Colors.deepPurple;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: getData("assets/data.json"),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          print(snapshot.data["Street Fighter V"]);
+          /*
+
+
+          .########...#######..##.....##.########.########..######.
+          .##.....##.##.....##.##.....##....##....##.......##....##
+          .##.....##.##.....##.##.....##....##....##.......##......
+          .########..##.....##.##.....##....##....######....######.
+          .##...##...##.....##.##.....##....##....##.............##
+          .##....##..##.....##.##.....##....##....##.......##....##
+          .##.....##..#######...#######.....##....########..######.
+          
+          */
           return MaterialApp(
             title: 'Fighter Companion',
             initialRoute: "/",
@@ -35,12 +45,12 @@ class MyApp extends StatelessWidget {
                       characterIndex: arg.characterIndex,
                     );
                   });
-                case StreetFighterVCharacterFrames.routeName:
+                case StreetFighterVCharacterMoves.routeName:
                   RouteCharacterIndex arg = settings.arguments;
                   return MaterialPageRoute(builder: (context) {
-                    return StreetFighterVCharacterFrames(
+                    return StreetFighterVCharacterMoves(
                       data: snapshot.data["Street Fighter V"]["Characters"]
-                          [arg.characterIndex]["Frames"],
+                          [arg.characterIndex],
                       characterIndex: arg.characterIndex,
                     );
                   });
@@ -55,7 +65,7 @@ class MyApp extends StatelessWidget {
                       snapshot.data["Street Fighter V"]["Characters"])
             },
             theme: ThemeData(
-              primarySwatch: Colors.red,
+              primarySwatch: headerColor,
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
           );
@@ -73,13 +83,17 @@ Future<Map<String, dynamic>> getData(String assetPath) async {
 
 class GamesCollection extends StatelessWidget {
   Map<String, dynamic> data;
-
   GamesCollection(this.data);
 
   @override
   Widget build(BuildContext context) {
+    //########################################
+    final MaterialColor backgroundColor = Colors.purple;
+
+    //########################################
     final gameTitles = data.keys.toList();
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: Text("Select A Game"),
       ),
@@ -126,17 +140,4 @@ class GamesCollection extends StatelessWidget {
       ),
     );
   }
-
-  // showAlert(BuildContext context) {
-  //   AlertDialog alert = AlertDialog(
-  //     title: Text("This is a standard Alert"),
-  //     content: null,
-  //     actions: [FlatButton(onPressed: null, child: Text("OK"))],
-  //   );
-  //   showDialog(
-  //       context: context,
-  //       builder: (BuildContext context) {
-  //         return alert;
-  //       },);
-  // }
 }

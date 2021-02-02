@@ -15,7 +15,6 @@ class StreetFighterVCharacterInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final selectionTitles = data.keys.toList().sublist(1);
-    print(data.keys.toList());
     return Scaffold(
       appBar: AppBar(
         title: Text(data["Name"]),
@@ -31,7 +30,7 @@ class StreetFighterVCharacterInfo extends StatelessWidget {
                   case 0:
                   case 1:
                     Navigator.pushNamed(
-                        context, "/StreetFighterV/Characters/Info/Frames",
+                        context, "/StreetFighterV/Characters/Info/Moves",
                         arguments: RouteCharacterIndex(this.characterIndex));
                     break;
                   case 2:
